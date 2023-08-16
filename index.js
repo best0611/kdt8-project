@@ -15,7 +15,7 @@ app.use("*", (req, res) => {
   res.render("404");
 });
 
-db.sequelize.sync().then(() => {
+db.sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);
   });
